@@ -100,9 +100,6 @@ inoremap <Up> <Esc>:m .-2<CR>==gi
 vnoremap <Down> :m '>+1<CR>gv=gv
 vnoremap <Up> :m '<-2<CR>gv=gv
 
-" Command-T
-let g:CommandTWildIgnore=&wildignore . ",**/bower_components/*,**/node_modules/*"
-
 " Rainbow parenthesis
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
