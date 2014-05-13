@@ -11,6 +11,7 @@ call pathogen#infect()
 :set clipboard=unnamed
 :filetype plugin indent on 
 :set wildmode=longest,list,full
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 let g:session_autoload='no'
 let g:session_autosave='yes'
@@ -70,6 +71,15 @@ endif
 " Js2Coffee
 :vmap <leader>j :!/Users/unreal/AppSource/node_modules/js2coffee/bin/js2coffee-wrap<cr>
 :nmap <silent> <leader>d <Plug>DashSearch
+
+:nmap <leader>t :CtrlP<cr>
+let g:ctrlp_user_command = {
+	\ 'types': {
+		\ 1: ['.git', 'cd %s && git ls-files'],
+		\ 2: ['.hg', 'hg --cwd %s locate -I .'],
+		\ },
+	\ 'fallback': 'find %s -type f'
+\ }
 " Search
 set hlsearch
 
