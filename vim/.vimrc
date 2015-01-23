@@ -56,7 +56,9 @@ function! RenameFile()
     endif
 endfunction
 map <leader>n :call RenameFile()<cr>
-nnoremap <cr> :nohlsearch<cr>
+nnoremap <c-l> :nohl<cr><c-l>
+noremap <space> :
+nnoremap <cr> za
 
 if has("gui_running")
   " Vim powerline
@@ -131,3 +133,12 @@ let g:rbpt_colorpairs = [
     \ ]
 
 nnoremap <F5> :GundoToggle<CR>
+
+" Fugitive
+autocmd User fugitive 
+  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+  \   nnoremap <buffer> .. :edit %:h<CR> |
+  \ endif
+autocmd BufReadPost fugitive://* set bufhidden=delete
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+

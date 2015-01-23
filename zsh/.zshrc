@@ -40,21 +40,12 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rvm git rails bundler ruby gem osx wd)
+plugins=(git-flow rvm git rails bundler ruby gem osx wd zeus)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$PATH:/Users/unreal/.rvm/gems/ruby-1.9.3-p194/bin:/Users/unreal/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/unreal/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/unreal/.rvm/bin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
-
-function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-
-zle -N zle-line-init
-zle -N zle-keymap-select
 
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
@@ -72,4 +63,5 @@ alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 export PATH=/usr/local/bin:$PATH
 export HOMEBREW_TEMP=/Users/unreal/tmp/homebrew
 
+PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
