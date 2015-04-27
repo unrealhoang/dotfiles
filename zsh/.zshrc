@@ -42,10 +42,11 @@ CASE_SENSITIVE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git-flow rvm git rails bundler ruby gem osx wd zeus)
 
-source $ZSH/oh-my-zsh.sh
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-# Customize to your needs...
-export PATH=$PATH:/Users/unreal/.rvm/gems/ruby-1.9.3-p194/bin:/Users/unreal/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/unreal/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/unreal/.rvm/bin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
+export PATH="$PATH:$HOME/.rvm/bin"
+
+source $ZSH/oh-my-zsh.sh
 
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
@@ -57,11 +58,3 @@ bindkey "^[^[[C" forward-word
 #{
 #  _update_ps1
 #}
-
-alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-export PATH=/usr/local/bin:$PATH
-export HOMEBREW_TEMP=/Users/unreal/tmp/homebrew
-
-PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
