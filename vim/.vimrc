@@ -27,7 +27,7 @@ nmap <F8> :TagbarToggle<CR>
 " Color
 let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
+colorscheme ir_black
 
 " Folding
 set foldmethod=indent   "fold based on indent
