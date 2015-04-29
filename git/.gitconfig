@@ -1,6 +1,25 @@
+[user]
+  name = Unreal Hoang
+  email = unrealhoang@gmail.com
+[core]
+  excludesfile = /Users/unreal/.gitignore_global
+  autocrlf = input
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
+[mergetool "sourcetree"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [alias]
-  co = checkout
-  cm = commit
+  ci = checkin
   st = status
   br = branch
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  co = checkout
+  df = diff
+  cm = commit
+[merge]
+  tool = splice
+[mergetool "splice"]
+  cmd = "mvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+  trustExitCode = true
+
