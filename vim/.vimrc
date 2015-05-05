@@ -82,6 +82,8 @@ let g:ctrlp_user_command = {
 		\ },
 	\ 'fallback': 'find %s -type f'
 \ }
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
 " Search
 set hlsearch
 
