@@ -40,11 +40,9 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git-flow rvm git rails bundler ruby gem osx wd zeus)
+plugins=(git-flow rvm git rails bundler ruby gem osx jump zeus)
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -58,3 +56,11 @@ bindkey "^[^[[C" forward-word
 #{
 #  _update_ps1
 #}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_OPTS="--extended --cycle"
+setopt HIST_IGNORE_DUPS
+SAVEHIST=1000000
+
+alias dlit='aria2c -x4 `pbpaste` -d ~/Downloads'

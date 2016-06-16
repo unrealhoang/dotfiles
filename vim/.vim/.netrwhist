@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/unreal/Workspace/Projects/Ruby/lg_image_scaler'
 let g:netrw_dirhist_2='/Users/unreal/Workspace/Projects/Ruby/homepage'
 let g:netrw_dirhist_3='/Users/unreal/Workspace/Projects/Ruby/lg_image_cropper'
@@ -7,3 +7,4 @@ let g:netrw_dirhist_4='/Users/unreal/Workspace/Projects/Ruby/mood_player_server'
 let g:netrw_dirhist_5='/Users/unreal/server'
 let g:netrw_dirhist_6='/Users/unreal/Workspace/Projects/Ruby/CodingKata'
 let g:netrw_dirhist_7='/Users/unreal/.vim'
+let g:netrw_dirhist_8='/Users/unreal/.tmux'

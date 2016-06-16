@@ -12,7 +12,9 @@ call pathogen#infect()
 :filetype plugin indent on 
 :set wildmode=longest,list,full
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+set showcmd
 
+let mapleader=' '
 let g:session_autoload='no'
 let g:session_autosave='yes'
 let g:ruby_doc_command='open'
@@ -27,7 +29,7 @@ nmap <F8> :TagbarToggle<CR>
 " Color
 let g:solarized_termcolors=256
 set background=dark
-colorscheme ir_black
+colorscheme PaperColor
 
 " Folding
 set foldmethod=indent   "fold based on indent
@@ -56,14 +58,14 @@ function! RenameFile()
     endif
 endfunction
 map <leader>n :call RenameFile()<cr>
+nnoremap <leader><tab> :b#<cr>
 nnoremap <c-l> :nohl<cr><c-l>
-noremap <space> :
 nnoremap <cr> za
 
 if has("gui_running")
   " Vim powerline
   set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim
-  set guifont=Menlo\ For\ Powerline
+  set guifont=Monaco
   set laststatus=2
 endif
 
@@ -74,7 +76,7 @@ endif
 :vmap <leader>j :!/Users/unreal/AppSource/node_modules/js2coffee/bin/js2coffee-wrap<cr>
 :nmap <silent> <leader>d <Plug>DashSearch
 
-:nmap <leader>t :CtrlP<cr>
+:nmap <leader>pf :CtrlP<cr>
 let g:ctrlp_user_command = {
 	\ 'types': {
 		\ 1: ['.git', 'cd %s && git ls-files'],
@@ -82,7 +84,7 @@ let g:ctrlp_user_command = {
 		\ },
 	\ 'fallback': 'find %s -type f'
 \ }
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|*.swp'
 
 " Search
 set hlsearch
@@ -137,10 +139,17 @@ let g:rbpt_colorpairs = [
 nnoremap <F5> :GundoToggle<CR>
 
 " Fugitive
-autocmd User fugitive 
+autocmd User fugitive
   \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
   \   nnoremap <buffer> .. :edit %:h<CR> |
   \ endif
 autocmd BufReadPost fugitive://* set bufhidden=delete
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+au BufNewFile,BufRead build.boot,*.edn set filetype=clojure
 
+" Persistent undo
+set undofile
+set undodir=$HOME/.vim/undo
+
+set undolevels=1000
+set undoreload=10000
