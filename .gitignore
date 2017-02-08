@@ -2,3 +2,4 @@ vim/.vim/sessions
 vim/.vim/undo
 dotconfig/nvim/undo
 dotconfig/hub
+.DS_Store
