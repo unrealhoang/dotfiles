@@ -15,17 +15,19 @@ source $HOME/.config/nvim/leader_map.vim
 :set wildmenu
 :set sh=zsh
 :set termguicolors
+:set cursorline
 
 " Folding
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set autoread
- 
+
 " Color
 set background=dark
-" colorscheme base16-eighties
-colorscheme dracula
+colorscheme ayu
+let ayucolor="dark"   " for dark version of theme
+" colorscheme dracula
 
 map <leader>n :call RenameFile()<cr>
 nmap <leader>vcr :source $HOME/.config/nvim/init.vim<cr>
@@ -61,4 +63,4 @@ set undoreload=10000
 set ttimeout
 set ttimeoutlen=0
 set hidden
-set inccommand=split
+set inccommand=nosplit

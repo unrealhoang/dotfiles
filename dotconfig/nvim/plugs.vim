@@ -17,7 +17,9 @@ Plug 'racer-rust/vim-racer'
 Plug 'tpope/vim-surround'
 Plug 'neomake/neomake'
 Plug 'rust-lang/rust.vim'
+Plug 'moll/vim-bbye'
 Plug 'dracula/vim'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 let g:fzf_action = {
@@ -46,3 +48,5 @@ let g:airline#extensions#tabline#enabled = 1
 let g:ag_working_path_mode="r"
 let $RUST_SRC_PATH="/Users/unreal/Resources/rust/src"
 let g:racer_cmd = "/Users/unreal/.cargo/bin/racer"
+
+:nnoremap <Leader>q :Bdelete<CR>
