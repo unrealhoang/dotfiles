@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/unreal/.config/nvim'
 let g:netrw_dirhist_2='/Users/unreal/Workspace/quoine/vax/app/services/reports'
 let g:netrw_dirhist_3='/Users/unreal/Workspace/quoine/quoine-api-client'
 let g:netrw_dirhist_4='/Users/unreal/dotfiles/dotconfig/nvim'
+let g:netrw_dirhist_5='/Users/unreal/Workspace/quoine/vax-new/app/assets/javascripts/app-js'

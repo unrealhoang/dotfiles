@@ -25,8 +25,10 @@ set autoread
 
 " Color
 set background=dark
-colorscheme ayu
+colorscheme base16-ocean
 let ayucolor="dark"   " for dark version of theme
+hi Normal guibg=NONE
+hi ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 " colorscheme dracula
 
 map <leader>n :call RenameFile()<cr>
@@ -37,11 +39,14 @@ nmap <leader>pb :FzfBuffers<cr>
 nmap <leader>pa :exec ":FzfAg ".input("Ag> ")<cr>
 nmap <leader>] :bn<cr>
 nmap <leader>[ :bp<cr>
-
+tnoremap <c-[><c-[> <c-\><c-n>
 
 nnoremap <leader><tab> :b#<cr>
 nnoremap <c-l> :nohl<cr><c-l>
 nnoremap <cr> za
+
+" Reset <cr> for quickfix
+:autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
 cmap w!! w !sudo tee %
 :command! Mkd !mkdir -p %:h

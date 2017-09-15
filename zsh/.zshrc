@@ -65,3 +65,6 @@ setopt HIST_IGNORE_DUPS
 SAVEHIST=1000000
 
 alias dlit='aria2c -x4 `pbpaste` -d ~/Downloads'
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

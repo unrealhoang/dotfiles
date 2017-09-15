@@ -20,6 +20,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'moll/vim-bbye'
 Plug 'dracula/vim'
 Plug 'ayu-theme/ayu-vim'
+Plug 'mhinz/vim-grepper'
 call plug#end()
 
 let g:fzf_action = {
