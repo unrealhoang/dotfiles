@@ -4,6 +4,7 @@
 [core]
 	excludesfile = /Users/unreal/.gitignore_global
   autocrlf = input
+	editor = nvim
 [alias]
   ci = checkin
   st = status
