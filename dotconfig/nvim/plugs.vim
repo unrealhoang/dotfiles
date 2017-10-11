@@ -9,7 +9,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'rking/ag.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'sheerun/vim-polyglot'
-Plug 'ajh17/Spacegray.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'schickling/vim-bufonly'
 Plug 'ntpeters/vim-better-whitespace'
@@ -18,9 +17,8 @@ Plug 'tpope/vim-surround'
 Plug 'neomake/neomake'
 Plug 'rust-lang/rust.vim'
 Plug 'moll/vim-bbye'
-Plug 'dracula/vim'
-Plug 'ayu-theme/ayu-vim'
 Plug 'mhinz/vim-grepper'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 call plug#end()
 
 let g:fzf_action = {

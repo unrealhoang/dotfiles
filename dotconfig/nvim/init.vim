@@ -14,8 +14,11 @@ source $HOME/.config/nvim/leader_map.vim
 :set wildmode=longest,list,full
 :set wildmenu
 :set sh=zsh
-:set termguicolors
 :set cursorline
+set listchars=space:·,eol:¬,tab:>·,trail:~,extends:>,precedes:<
+set list
+set termguicolors
+
 
 " Folding
 set foldmethod=indent   "fold based on indent
@@ -24,11 +27,9 @@ set nofoldenable        "dont fold by default
 set autoread
 
 " Color
-set background=dark
-colorscheme base16-ocean
-let ayucolor="dark"   " for dark version of theme
-hi Normal guibg=NONE
-hi ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+colorscheme nord
+"let ayucolor="dark"   " for dark version of theme
+"hi ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 " colorscheme dracula
 
 map <leader>n :call RenameFile()<cr>
