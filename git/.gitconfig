@@ -1,6 +1,7 @@
 [user]
   name = Unreal Hoang
   email = unrealhoang@gmail.com
+	signingkey = F66217BDC6F37CFA
 [core]
 	excludesfile = /Users/unreal/.gitignore_global
   autocrlf = input
@@ -14,6 +15,7 @@
   cm = commit
 [merge]
   tool = splice
+	conflictstyle = diff3
 [mergetool "splice"]
   cmd = "mvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
   trustExitCode = true
@@ -33,3 +35,5 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	gpgsign = true

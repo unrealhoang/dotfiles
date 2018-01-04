@@ -27,7 +27,7 @@ set nofoldenable        "dont fold by default
 set autoread
 
 " Color
-colorscheme nord
+colorscheme vim-material
 "let ayucolor="dark"   " for dark version of theme
 "hi ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 " colorscheme dracula
