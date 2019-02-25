@@ -21,6 +21,8 @@ Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'majutsushi/tagbar'
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 Plug 'hzchirs/vim-material'
+Plug 'mgee/lightline-bufferline'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 let g:fzf_action = {
@@ -44,11 +46,7 @@ let g:fzf_colors =
 
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_buffers_jump = 1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
 let g:ag_working_path_mode="r"
-let g:tagbar_ctags_bin = "/usr/local/bin/ctags"
-let g:tagbar_width = 60
 
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
@@ -57,9 +55,20 @@ let g:LanguageClient_serverCommands = {
 let g:lightline = {
       \ 'colorscheme': 'nord',
       \ }
+let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
+let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+let g:lightline.component_type   = {'buffers': 'tabsel'}
+let g:lightline#bufferline#number_map = {
+      \ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
+      \ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
+let g:lightline#bufferline#show_number = 2
 
 nnoremap <silent> <Leader>gh :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <Leader>gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <Leader>gn :call LanguageClient_textDocument_rename()<CR>
 " Automatically start language servers.
-let g:LanguageClient_autoStart = 1
+let g:LanguageClient_autoStart = 0
+nnoremap <leader>lcs :LanguageClientStart<CR>
+
 :nnoremap <Leader>q :Bdelete<CR>
+let g:autofmt_autosave = 1

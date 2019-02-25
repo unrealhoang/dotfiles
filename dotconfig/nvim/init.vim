@@ -15,8 +15,6 @@ source $HOME/.config/nvim/leader_map.vim
 :set wildmenu
 :set sh=zsh
 :set cursorline
-set listchars=space:·,eol:¬,tab:>·,trail:~,extends:>,precedes:<
-set list
 set termguicolors
 
 
@@ -25,22 +23,27 @@ set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set autoread
+set showtabline=2
 
 " Color
+let g:material_style='palenight'
+set background=dark
 colorscheme vim-material
-"let ayucolor="dark"   " for dark version of theme
 "hi ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 " colorscheme dracula
 
 map <leader>n :call RenameFile()<cr>
 nmap <leader>vcr :source $HOME/.config/nvim/init.vim<cr>
-nmap <leader>pf :FZF<cr>
+
+command! -bang FZFRgFiles
+  \ call fzf#run(fzf#wrap('rg Files', {'source': 'rg --files .' }, <bang>0))
+
+nmap <leader>pf :FZFRgFiles<cr>
 nmap <leader>pg :FzfGitFiles<cr>
 nmap <leader>pb :FzfBuffers<cr>
-nmap <leader>pa :exec ":FzfAg ".input("Ag> ")<cr>
+nmap <leader>pa :exec ":FzfRg ".input("Ag> ")<cr>
 nmap <leader>] :bn<cr>
 nmap <leader>[ :bp<cr>
-tnoremap <c-[><c-[> <c-\><c-n>
 
 nnoremap <leader><tab> :b#<cr>
 nnoremap <c-l> :nohl<cr><c-l>

@@ -13,12 +13,7 @@
   co = checkout
   df = diff
   cm = commit
-[merge]
-  tool = splice
-	conflictstyle = diff3
-[mergetool "splice"]
-  cmd = "mvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
-  trustExitCode = true
+  cp = cherry-pick
 [push]
 	default = current
 [filter "lfs"]
@@ -29,11 +24,5 @@
   algorithm = minimal
   compactionHeuristic = true
   renames = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [commit]
 	gpgsign = true
