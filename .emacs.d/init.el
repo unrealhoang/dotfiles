@@ -8,7 +8,7 @@
 			 ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
 
-(require 'help-fns+)
+;; (require 'help-fns+)
 
 ;; Bootstrap `use-package`
 (unless (package-installed-p 'use-package)
@@ -17,7 +17,7 @@
 (require 'use-package)
 
 ;; PATH
-(let ((path (shell-command-to-string ". ~/.bash_profile; echo -n $PATH")))
+(let ((path (shell-command-to-string ". ~/.zshrc; echo -n $PATH")))
   (setenv "PATH" path)
   (setq exec-path
 	(append
@@ -76,9 +76,10 @@
 (tooltip-mode    -1)
 (menu-bar-mode   -1)
 (global-linum-mode 1)
-(add-to-list 'default-frame-alist '(font . "Fira Code"))
+(add-to-list 'default-frame-alist '(font . "Fira Code-12"))
 (add-to-list 'default-frame-alist '(height . 24))
 (add-to-list 'default-frame-alist '(width . 80))
+(add-to-list 'default-frame-alist '(font-backend . "pango"))
 
 ;; Vim mode
 (use-package evil
@@ -239,7 +240,7 @@
 (setq ns-use-proxy-icon  nil)
 (setq frame-title-format nil)
 
-(require 'rvm)
+;; (require 'rvm)
 ;; LSP
 (use-package lsp-mode
   :ensure t

@@ -14,7 +14,27 @@ function! RenameFile()
 endfunction
 
 map <leader>n :call RenameFile()<cr>
-nmap <leader>pf :FZF<cr>
 nnoremap <leader><tab> :b#<cr>
 nnoremap <leader>- :split<cr>
 nnoremap <leader>\ :vsplit<cr>
+nmap <leader>vcr :source $HOME/.config/nvim/init.vim<cr>
+
+command! -bang FZFRgFiles
+  \ call fzf#run(fzf#wrap('rg Files', {'source': 'rg --files .' }, <bang>0))
+
+nmap <leader>pf :FZFRgFiles<cr>
+nmap <leader>pg :FzfGitFiles<cr>
+nmap <leader>pb :FzfBuffers<cr>
+nmap <leader>pa :exec ":FzfRg ".input("Ag> ")<cr>
+nmap <leader>ps :exec ":FzfRg ".expand("<cword>")<cr>
+nmap <leader>] :bn<cr>
+nmap <leader>[ :bp<cr>
+
+nnoremap <leader><tab> :b#<cr>
+
+" Language Client
+nnoremap <leader>lcs :LanguageClientStart<CR>
+nnoremap <leader>lcd :LanguageClientStop<CR>
+nnoremap <silent> <leader>gn :call LanguageClient_textDocument_rename()<CR>
+
+nnoremap <leader><space> :StripWhitespace<cr>

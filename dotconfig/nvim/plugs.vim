@@ -13,16 +13,17 @@ Plug 'chriskempson/base16-vim'
 Plug 'schickling/vim-bufonly'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-surround'
-Plug 'neomake/neomake'
 Plug 'rust-lang/rust.vim'
 Plug 'moll/vim-bbye'
 Plug 'mhinz/vim-grepper'
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'majutsushi/tagbar'
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+Plug '/mnt/data/Workspace/OSS/LanguageClient-neovim'
+Plug '~/Workspace/OSS/vim-lsc'
 Plug 'hzchirs/vim-material'
 Plug 'mgee/lightline-bufferline'
 Plug 'scrooloose/nerdtree'
+Plug 'w0rp/ale'
 call plug#end()
 
 let g:fzf_action = {
@@ -49,7 +50,7 @@ let g:fzf_buffers_jump = 1
 let g:ag_working_path_mode="r"
 
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+    \ 'rust': ['rustup', 'run', 'stable', 'ra_lsp_server'],
     \ }
 
 let g:lightline = {
@@ -63,12 +64,21 @@ let g:lightline#bufferline#number_map = {
       \ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
 let g:lightline#bufferline#show_number = 2
 
-nnoremap <silent> <Leader>gh :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> <Leader>gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <Leader>gn :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 0
-nnoremap <leader>lcs :LanguageClientStart<CR>
 
 :nnoremap <Leader>q :Bdelete<CR>
 let g:autofmt_autosave = 1
+"let g:LanguageClient_devel = 1 " Use rust debug build
+let g:LanguageClient_loggingLevel = 'DEBUG' " Use highest logging level
+let g:LanguageClient_loggingFile = expand('~/.vim/LanguageClient.log')
+let g:LanguageClient_serverStderr = expand('~/.vim/LanguageServerErr.log')
+let g:LanguageClient_rootMarkers = {
+    \ 'rust': ['Cargo.lock'],
+    \ }
+
+let g:ale_linters = {
+  \   'rust': ['cargo'],
+  \ }

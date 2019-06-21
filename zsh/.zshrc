@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -42,8 +42,6 @@ CASE_SENSITIVE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git sudo fasd)
 
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-
 source $ZSH/oh-my-zsh.sh
 
 bindkey "^[^[[D" backward-word
@@ -67,6 +65,3 @@ setopt HIST_IGNORE_DUPS
 SAVEHIST=1000000
 
 alias dlit='aria2c -x4 `pbpaste` -d ~/Downloads'
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"

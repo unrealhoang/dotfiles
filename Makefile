@@ -8,7 +8,6 @@ default: remove
 	ln -s "$(PWD)/zsh/.zshrc" ${HOME}/.zshrc
 
 remove:
-	-rm ~/.config
 	-rm ~/.gitconfig
 	-rm ~/.tmux.conf
 	-rm ~/.vim
