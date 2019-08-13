@@ -38,3 +38,4 @@ nnoremap <leader>lcd :LanguageClientStop<CR>
 nnoremap <silent> <leader>gn :call LanguageClient_textDocument_rename()<CR>
 
 nnoremap <leader><space> :StripWhitespace<cr>
+nnoremap <leader>ss :source %<CR>

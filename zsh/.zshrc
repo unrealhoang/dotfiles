@@ -56,6 +56,7 @@ bindkey "^[^[[C" forward-word
 #}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.cargo/env ] && source ~/.cargo/env
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -65,3 +66,6 @@ setopt HIST_IGNORE_DUPS
 SAVEHIST=1000000
 
 alias dlit='aria2c -x4 `pbpaste` -d ~/Downloads'
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin:$HOME/.cargo"

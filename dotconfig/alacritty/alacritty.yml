@@ -22,7 +22,8 @@ window:
     x: 2
     y: 2
 
-  decorations: full
+  decorations: none
+  startup_mode: Maximized
 
 # Adds this many blank pixels of padding around the window
 # Units are physical pixels; this is not DPI aware.

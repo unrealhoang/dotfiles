@@ -18,8 +18,8 @@ Plug 'moll/vim-bbye'
 Plug 'mhinz/vim-grepper'
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'majutsushi/tagbar'
-Plug '/mnt/data/Workspace/OSS/LanguageClient-neovim'
-Plug '~/Workspace/OSS/vim-lsc'
+Plug '~/Workspace/OSS/LanguageClient-neovim'
+Plug '~/Workspace/OSS/lspc'
 Plug 'hzchirs/vim-material'
 Plug 'mgee/lightline-bufferline'
 Plug 'scrooloose/nerdtree'
@@ -82,3 +82,10 @@ let g:LanguageClient_rootMarkers = {
 let g:ale_linters = {
   \   'rust': ['cargo'],
   \ }
+let g:ale_rust_cargo_check_all_targets = 1
+let g:lspc = {
+      \ 'rust': {
+      \     'root_markers': ['Cargo.lock'],
+      \     'command': ['rustup', 'run', 'stable', 'ra_lsp_server'],
+      \     },
+      \ }
