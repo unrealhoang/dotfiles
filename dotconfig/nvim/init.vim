@@ -1,6 +1,3 @@
-source $HOME/.config/nvim/plugs.vim
-source $HOME/.config/nvim/leader_map.vim
-
 :syntax on
 :set ruler
 :set autoindent
@@ -15,8 +12,11 @@ source $HOME/.config/nvim/leader_map.vim
 :set wildmenu
 :set sh=zsh
 :set cursorline
-set termguicolors
+:set mouse=a
+:set termguicolors
 
+source $HOME/.config/nvim/plugs.vim
+source $HOME/.config/nvim/leader_map.vim
 
 " Folding
 set foldmethod=indent   "fold based on indent
@@ -28,7 +28,7 @@ set showtabline=2
 " Color
 let g:material_style='palenight'
 set background=dark
-colorscheme vim-material
+colorscheme base16-ocean
 "hi ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 " colorscheme dracula
 
