@@ -40,7 +40,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git sudo fasd)
+plugins=(git sudo fasd zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,3 +69,5 @@ alias dlit='aria2c -x4 `pbpaste` -d ~/Downloads'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin:$HOME/.cargo"
+
+source /home/unreal/.config/broot/launcher/bash/br

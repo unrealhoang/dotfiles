@@ -20,7 +20,7 @@ nnoremap <leader>\ :vsplit<cr>
 nmap <leader>vcr :source $HOME/.config/nvim/init.vim<cr>
 
 command! -bang FZFRgFiles
-  \ call fzf#run(fzf#wrap('rg Files', {'source': 'rg --files .' }, <bang>0))
+  \ call fzf#run(fzf#wrap('rg Files', {'source': 'rg --files --follow .' }, <bang>0))
 
 nmap <leader>pf :FZFRgFiles<cr>
 nmap <leader>pg :FzfGitFiles<cr>

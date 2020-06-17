@@ -3,7 +3,6 @@
   email = unrealhoang@gmail.com
 	signingkey = F66217BDC6F37CFA
 [core]
-	excludesfile = /Users/unreal/.gitignore_global
   autocrlf = input
 	editor = nvim
 [alias]
