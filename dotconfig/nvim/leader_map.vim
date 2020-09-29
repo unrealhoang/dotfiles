@@ -1,5 +1,3 @@
-let mapleader=' '
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -22,20 +20,19 @@ nmap <leader>vcr :source $HOME/.config/nvim/init.vim<cr>
 command! -bang FZFRgFiles
   \ call fzf#run(fzf#wrap('rg Files', {'source': 'rg --files --follow .' }, <bang>0))
 
-nmap <leader>pf :FZFRgFiles<cr>
-nmap <leader>pg :FzfGitFiles<cr>
-nmap <leader>pb :FzfBuffers<cr>
-nmap <leader>pa :exec ":FzfRg ".input("Ag> ")<cr>
-nmap <leader>ps :exec ":FzfRg ".expand("<cword>")<cr>
+nmap <leader>pf :Files<cr>
+nmap <leader>pg :GFiles<cr>
+nmap <leader>pb :Buffers<cr>
+nmap <leader>gc :Commits<cr>
+nmap <leader>gg :BCommits<cr>
+nmap <leader>pa :exec ":Rg ".input("Ag> ")<cr>
+nmap <leader>ps :exec ":Rg ".expand("<cword>")<cr>
 nmap <leader>] :bn<cr>
 nmap <leader>[ :bp<cr>
 
 nnoremap <leader><tab> :b#<cr>
 
-" Language Client
-nnoremap <leader>lcs :LanguageClientStart<CR>
-nnoremap <leader>lcd :LanguageClientStop<CR>
-nnoremap <silent> <leader>gn :call LanguageClient_textDocument_rename()<CR>
-
 nnoremap <leader><space> :StripWhitespace<cr>
 nnoremap <leader>ss :source %<CR>
+
+imap <c-x><c-f> <plug>(fzf-complete-path)

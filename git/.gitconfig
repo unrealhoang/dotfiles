@@ -1,18 +1,18 @@
 [user]
-  name = Unreal Hoang
-  email = unrealhoang@gmail.com
+	name = Unreal Hoang
+	email = unrealhoang@gmail.com
 	signingkey = F66217BDC6F37CFA
 [core]
-  autocrlf = input
+	autocrlf = input
 	editor = nvim
 [alias]
-  ci = checkin
-  st = status
-  br = branch
-  co = checkout
-  df = diff
-  cm = commit
-  cp = cherry-pick
+	ci = checkin
+	st = status
+	br = branch
+	co = checkout
+	df = diff
+	cm = commit
+	cp = cherry-pick
 [push]
 	default = current
 [filter "lfs"]
@@ -20,9 +20,9 @@
 	smudge = git-lfs smudge %f
 	required = true
 [diff]
-  algorithm = minimal
-  compactionHeuristic = true
-  renames = true
+	algorithm = minimal
+	compactionHeuristic = true
+	renames = true
 [commit]
 	gpgsign = true
 [merge]
