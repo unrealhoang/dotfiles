@@ -32,6 +32,27 @@ function setup()
     refactor = {
       highlight_definitions = { enable = true },
     },
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = "gnn",
+        node_incremental = "gnn",
+        scope_incremental = "grc",
+        node_decremental = "gnp",
+      },
+    },
+    textobjects = {
+      select = {
+        enable = true,
+        keymaps = {
+          -- You can use the capture groups defined in textobjects.scm
+          ["af"] = "@function.outer",
+          ["if"] = "@function.inner",
+          ["ac"] = "@class.outer",
+          ["ic"] = "@class.inner",
+        },
+      },
+    },
   }
 
   require'telescope'.setup {
